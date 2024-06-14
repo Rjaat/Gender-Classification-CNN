@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender Classification</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Gender Classification</h1>
+        <div class="links">
+            <a href="{{ url_for('camera') }}" class="button"><i class="fas fa-video"></i> Live Camera Feed</a>
+            <a href="{{ url_for('upload') }}" class="button"><i class="fas fa-upload"></i> Upload Image</a>
+        </div>
+    </div>
+</body>
+</html>
+
+

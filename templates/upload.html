@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender Classification - Upload</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='uploadStyle.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-cloud-upload-alt"></i> Upload Image for Gender Classification</h1>
+        <form method="post" enctype="multipart/form-data" id="upload-form">
+            <label for="file-upload" class="custom-file-upload">
+                <input type="file" id="file-upload" name="file">
+                <i class="fas fa-upload"></i> Choose File
+            </label>
+            <button type="submit" class="upload-button"><i class="fas fa-cloud-upload-alt"></i> Upload</button>
+        </form>
+        {% if filename %}
+            <div class="result">
+                <h2>Predicted Gender: {{ gender }}</h2>
+                <img src="{{ url_for('display_image', filename=filename) }}" alt="Uploaded Image" class="uploaded-image">
+            </div>
+        {% endif %}
+        <a href="{{ url_for('index') }}" class="button"><i class="fas fa-home"></i> Back to Home</a>
+    </div>
+</body>
+</html>

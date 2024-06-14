@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Gender Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cameraStyle.css') }}">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Real-Time Gender Classification</h1>
+        <div class="video-container">
+            <img id="video-feed" src="{{ url_for('video_feed') }}" alt="video feed">
+        </div>
+        <div class="button-container">
+            <button id="capture-button" onclick="captureFrame()"><i class="fas fa-camera"></i> Capture</button>
+            <button id="classify-button" onclick="classifyImage()"><i class="fas fa-check-circle"></i> Classify</button>
+        </div>
+        <div class="captured-container">
+            <img id="captured-image" src="" alt="captured image">
+        </div>
+        <p id="result"></p>
+        <a href="{{ url_for('index') }}" class="button"><i class="fas fa-home"></i> Back to Home</a>
+    </div>
+</body>
+</html>
