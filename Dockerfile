@@ -7,6 +7,9 @@ RUN apt-get update && \
 # Set the working directory
 WORKDIR /app
 
+
+RUN apt-get update
+RUN apt install -y libgl1-mesa-glx
 # Copy the requirements file
 COPY requirements.txt .
 
